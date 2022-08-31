@@ -86,3 +86,34 @@ font-size:12px;
 .content button:active{
     transform:scale(0.5);
 }
+.typing-text p span{
+    position:relative;
+}
+.content-box .typing-text p span.correct{
+    color: rgb(47, 174, 102);
+
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
+.content-box .typing-text p span.incorrect{
+    color: rgb(192, 43, 43);
+    background:#ffc0cb;
+    outline: 0.00001px solid rgb(239, 155, 82);
+    border-radius: 3px;
+}
+.content-box .typing-text p span.active{
+     color: rgb(90, 187, 216); 
+}
+.content-box .typing-text p span.active::before{
+    content: '_';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height:2px;
+    background: rgb(64, 196, 31);
+    opacity: 0;
+    animation: blink 1s ease-in-out infinite;
+}
